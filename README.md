@@ -22,7 +22,7 @@ CarbonLens 是「永續投資與綠色金融創新」課程的概念驗證。研
 | [V2.3 公開驗收清單](docs/assignment_checklist.md) | 任務四的公開 HTTPS 操作、AI、覆核、下載及安全驗收 |
 | [任務五評估紀錄](docs/task5_evaluation.md) | 部署前檢查與後續公開網站實測結果 |
 
-最終交付將包含可直接在瀏覽器使用的公開 HTTPS 網址。現在程式完成至 Phase 3，公開部署與真實 AI、覆核、報告功能仍在後續工作範圍。網址取得後會在此記錄實際連結。
+已整合模型工具呼叫、WACI、授權登入、覆核與報告下載。GitHub 專案為 https://github.com/xr1624/CarbonLens ，部署分支為 `codex/deploy`。公開網址與真實模型成功驗證仍待完成，測試狀態見任務五紀錄。
 
 ## 本機啟動與測試
 
@@ -68,7 +68,7 @@ print(result.status.value, result.fund_waci, result.actual_reduction_pct)
 3. 以相同步驟驗證 `SYN002` 與 `SYN003`，或改選「上傳 CSV」上傳 `data/` 內的三份資料。缺少必要欄位的檔案會顯示檔名及問題。若宣稱待確認，保留原文並將降低比例留空。
 4. 切回「分析總覽」查看累計案件，在「案件分析」選擇已建立案件。案件保存在目前 Streamlit 工作階段，重新整理或重新啟動可能清除案件。
 
-本階段以人工核對原文、比較基準及年度作為計算前提。Phase 4 將接入模型擷取，Phase 5 將加入正式覆核、持久化與報告匯出。
+亦可選擇 Mock Mode 示範擷取，或登入後以 Real 呼叫模型。操作步驟見 [使用者說明](docs/user_guide.md)。登入案件使用 SQLite 或設定的 PostgreSQL，Cloud 的 SQLite 不保證跨重啟保存。
 
 ## 最新本機操作
 

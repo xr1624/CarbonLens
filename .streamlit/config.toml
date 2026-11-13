@@ -8,3 +8,9 @@ font = "sans-serif"
 
 [browser]
 gatherUsageStats = false
+
+[server]
+maxUploadSize = 10
+
+[client]
+showErrorDetails = "none"

@@ -9,6 +9,7 @@ from src.cases import encode_case
 from src.claim_extraction import Claim
 from src.settings import load_settings
 from src.storage import Store, default_database_url
+from src.reports import report_csv
 
 
 @st.cache_resource
@@ -85,6 +86,7 @@ def execute(case):
 
 
 def controls(case):
+    st.download_button("下載分析結果 CSV", report_csv(case), file_name=f"CarbonLens_{case.case_id}.csv", mime="text/csv", on_click="ignore")
     st.caption(f"模式：{case.mode} · 覆核：{case.review_status} · 版本：{case.revision}")
     if case.extraction:
         with st.expander("模型擷取與用量"):
