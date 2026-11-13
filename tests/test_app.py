@@ -52,3 +52,15 @@ def test_target_requires_manual_confirmation(browser_session):
     assert not app.exception
     assert app.info[0].value == "等待宣稱確認"
     assert app.session_state.cases[-1].result.fund_waci is None
+
+
+def test_review_on_creation_page_survives_rerun(browser_session):
+    app = browser_session
+    app.text_input[0].set_value("30")
+    app.checkbox[0].set_value(True)
+    app.button[0].click().run()
+    app.text_area[1].set_value("已核對原文與數值")
+    next(button for button in app.button if button.label == "儲存覆核").click().run()
+    assert not app.exception
+    assert app.session_state.cases[-1].review_status == "已確認"
+    assert app.session_state.cases[-1].revision == 2

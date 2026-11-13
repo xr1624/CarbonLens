@@ -98,13 +98,18 @@ def controls(case):
             st.dataframe([asdict(event) for event in case.events], hide_index=True)
     for problem in case.claim_issues:
         st.warning(problem)
-    st.download_button("下載完整案件與證據 JSON", encode_case(case), file_name=f"{case.case_id}.json", mime="application/json", on_click="ignore")
+    st.download_button("下載完整案件與證據 JSON", encode_case(case), file_name=f"CarbonLens_{case.case_id}.json", mime="application/json", on_click="ignore")
     result = case.result
     report = f"# CarbonLens 分析報告\n\n案件：{case.case_id}\n\n模式：{case.mode}\n\n宣稱：{case.claim}\n\n判定：{case.status}\n\n覆核：{case.review_status}\n"
     if result:
         report += f"\n基金 WACI：{result.fund_waci}\n\n實際降低 (%)：{result.actual_reduction_pct}\n\n資料覆蓋率 (%)：{result.coverage_pct}\n"
     report += "\n## 覆核紀錄\n" + "\n".join(f"- {r.at.isoformat()} {r.action}：{r.comment}" for r in case.reviews)
-    st.download_button("下載分析報告 Markdown", report, file_name=f"{case.case_id}.md", mime="text/markdown", on_click="ignore")
+    st.download_button("下載分析報告 Markdown", report, file_name=f"CarbonLens_{case.case_id}.md", mime="text/markdown", on_click="ignore")
+    if case.reviews:
+        with st.expander("歷次覆核紀錄"):
+            for review in case.reviews:
+                st.text(f"{review.at.isoformat()} · {review.action} · {review.comment}")
+                st.json({"原始值": review.original, "修正值": review.corrected})
     with st.expander("人工覆核、修正或退回"):
         claim = case.extraction.claim if case.extraction else None
         with st.form(f"review_{case.case_id}_{case.revision}"):

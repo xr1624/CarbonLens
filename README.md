@@ -2,6 +2,10 @@
 
 **See Beyond the Green.**
 
+公開網站：[CarbonLens](https://carbonlens-xr1624.streamlit.app/)
+
+網站已啟動，示範 WACI 與 CSV 下載已從公開網址驗證。Real 模型成功驗收仍待 API 額度問題排除；完整進度見 [驗收紀錄](docs/task5_evaluation.md)。
+
 AI-Powered Carbon Claim Verification Platform
 
 基於 AI Agent 之永續基金低碳宣稱與碳排表現一致性分析系統  

@@ -196,6 +196,10 @@ def show_case_form():
         submitted = st.form_submit_button("建立案件並分析", type="primary")
 
     if not submitted:
+        latest_id = st.session_state.get("created_case_id")
+        latest = next((case for case in st.session_state.cases if case.case_id == latest_id), None)
+        if latest is not None:
+            show_analysis(latest)
         return
     try:
         target = parse_target(raw_target) if mode == "人工輸入" else None
@@ -226,6 +230,7 @@ def show_case_form():
     if mode != "人工輸入":
         case = execute(case)
     case = save_case(case)
+    st.session_state.created_case_id = case.case_id
     st.success(f"已建立案件 {case.case_id}。")
     show_analysis(case)
 
@@ -247,7 +252,7 @@ def show_analysis(case: Case):
     validation = result.validation
     st.subheader("分析結果")
     st.text(f"{case.fund_name} · {case.case_id}")
-    st.caption(f"{case.source}　·　人工輸入宣稱欄位　·　{SCOPE}")
+    st.caption(f"{case.source}　·　{case.mode}　·　{SCOPE}")
     tone = STATUS_TONES[result.status]
     getattr(st, tone)(result.status.value)
 
@@ -377,7 +382,7 @@ def main():
     else:
         show_case_history(st.session_state.cases)
     st.divider()
-    st.caption("CarbonLens · 結果供低碳宣稱與漂綠風險的初步篩選。案件存於目前瀏覽器工作階段。")
+    st.caption("CarbonLens · 結果供低碳宣稱與漂綠風險初步篩選。訪客案件限目前工作階段；雲端展示版 SQLite 可能在重啟後清除，請下載報告保存。")
 
 
 if __name__ == "__main__":

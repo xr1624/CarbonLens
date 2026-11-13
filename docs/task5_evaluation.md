@@ -60,3 +60,10 @@
 - 採單次模型請求、指定工具的有界工作流程，最終結論由 Python 回傳；不使用模型自由文字計算 WACI。
 - 新增 SDK 回應替身測試，驗證工具參數與不合法回應攔截。最新結果：60 passed in 6.01s。
 - 替身測試不代表真實 API 成功；目前仍因 RateLimitError 待驗證。
+
+## 2026-11-13 GitHub 與部署進度
+
+- 已建立並推送 https://github.com/xr1624/CarbonLens ，部署分支 codex/deploy，程式版本 a9a758a。
+- 已在 Streamlit Community Cloud 指定 app.py、Python 3.12，使用者已貼入並儲存 Secrets。
+- 已提交 Deploy，平台導向 https://carbonlens-xr1624.streamlit.app/ ，當下顯示 Your app is in the oven，尚未判定啟動成功。
+- 最新本機測試：60 passed in 6.45s。公開核心功能待啟動後測試。
