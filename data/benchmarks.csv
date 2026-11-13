@@ -1,0 +1,2 @@
+benchmark_id,benchmark_name,data_year,emission_scope,waci,waci_unit
+SYN-BM01,CarbonLens 合成市場基準,2025,Scope 1 + Scope 2,100,tCO₂e / USD million revenue

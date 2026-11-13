@@ -1,0 +1,7 @@
+fund_id,company_id,company_name,sector,weight_pct,carbon_intensity_tco2e_per_usd_million_revenue,data_year,emission_scope
+SYN001,SYN-C01,沐岑數位服務,資訊科技,60,40,2025,Scope 1 + Scope 2
+SYN001,SYN-C02,林序醫療設備,醫療保健,40,65,2025,Scope 1 + Scope 2
+SYN002,SYN-C03,岫泉機械製造,工業,50,80,2025,Scope 1 + Scope 2
+SYN002,SYN-C04,嶺川建築材料,原物料,50,110,2025,Scope 1 + Scope 2
+SYN003,SYN-C01,沐岑數位服務,資訊科技,60,40,2025,Scope 1 + Scope 2
+SYN003,SYN-C05,宸汐電力服務,公用事業,40,,2025,Scope 1 + Scope 2

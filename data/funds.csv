@@ -1,0 +1,4 @@
+fund_id,fund_name,esg_claim,benchmark_id,report_year,claimed_reduction_pct
+SYN001,青岑永續策略基金（Synthetic Data）,本基金 2025 年的投資組合碳強度較 CarbonLens 合成市場基準低 30%。,SYN-BM01,2025,30
+SYN002,瀾原責任投資基金（Synthetic Data）,本基金 2025 年的投資組合碳強度較 CarbonLens 合成市場基準低 30%。,SYN-BM01,2025,30
+SYN003,澄野環境轉型基金（Synthetic Data）,本基金 2025 年的投資組合碳強度較 CarbonLens 合成市場基準低 30%。,SYN-BM01,2025,30

@@ -1,0 +1,113 @@
+<style>
+  :root {
+    --carbon-forest: #123C35;
+    --carbon-mint: #A6E4C6;
+  }
+
+  [data-testid="stMainBlockContainer"] {
+    max-width: 1440px;
+    padding-top: 4.25rem;
+  }
+
+  .carbon-hero {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    min-height: 220px;
+    padding: 2.25rem 2.65rem;
+    border-radius: 20px;
+    background: linear-gradient(115deg, #123C35 55%, #1A5649);
+    color: #F7F8F5;
+  }
+
+  .carbon-hero-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .carbon-hero h1 {
+    margin: .4rem 0;
+    padding: 0;
+    font-size: clamp(2rem, 4.2vw, 3.6rem);
+    font-weight: 750;
+    letter-spacing: -.035em;
+    line-height: 1.18;
+    color: #F7F8F5;
+  }
+
+  .carbon-hero .carbon-brand {
+    color: var(--carbon-mint);
+    font-family: Geist, Inter, system-ui, sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0;
+  }
+
+  .carbon-brand span {
+    display: inline-block;
+    margin-left: 1rem;
+    color: #D6EDDF;
+    font-size: .82rem;
+    font-weight: 500;
+  }
+
+  .carbon-hero .carbon-description {
+    color: #D6EDDF;
+    margin: .75rem 0 0;
+  }
+
+  .carbon-hero-art {
+    position: absolute;
+    inset: 0 0 0 auto;
+    width: 43%;
+    background-image:
+      repeating-linear-gradient(0deg, transparent 0 31px, #a6e4c61a 31px 32px),
+      repeating-linear-gradient(90deg, transparent 0 31px, #a6e4c61a 31px 32px),
+      radial-gradient(circle at 72% 45%, transparent 0 48px, #a6e4c64d 49px 50px, transparent 51px 70px, #a6e4c64d 71px 72px, transparent 73px 93px, #a6e4c633 94px 95px, transparent 96px);
+    mask-image: linear-gradient(90deg, transparent, #000 40%);
+  }
+
+  [data-testid="stMetric"] {
+    background: #FFF;
+    border-color: #DAE6DB;
+  }
+
+  [data-testid="stMetricValue"] {
+    color: var(--carbon-forest);
+    font-family: Geist, Inter, system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+
+  [data-testid="stText"] {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+
+  @media (max-width: 760px) {
+    [data-testid="stMainBlockContainer"] {
+      padding-inline: 1rem;
+      padding-top: 3.5rem;
+    }
+
+    .carbon-hero {
+      min-height: 190px;
+      padding: 1.35rem;
+      border-radius: 14px;
+    }
+
+    .carbon-hero-art {
+      opacity: .35;
+    }
+
+    [data-testid="stHorizontalBlock"] {
+      flex-wrap: wrap;
+    }
+
+    [data-testid="stColumn"] {
+      min-width: min(100%, 255px);
+      flex: 1 1 255px;
+    }
+  }
+</style>
